@@ -14,19 +14,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.browser = (WebView)findViewById(R.id.webView);
-        this.browser.setWebViewClient(new CustomWebViewClient());
-        WebSettings webSetting = this.browser.getSettings();
-        webSetting.setJavaScriptEnabled(true);
-        webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webSetting.setDisplayZoomControls(true);
+        this.browser = (WebView) findViewById(R.id.webView);
+        this.browser.setWebViewClient(new MyWebViewClient());
 
-        browser.getSettings().setLoadWithOverviewMode(true);
-        browser.getSettings().setUseWideViewPort(true);
-        this.browser.loadUrl("http://google.de");
+        String url = "http://schmitz-dynamics.ch:60";
+        this.browser.getSettings().setJavaScriptEnabled(true);
+        this.browser.loadUrl(url);
     }
 
-    private class CustomWebViewClient extends WebViewClient {
+    private class MyWebViewClient  extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
