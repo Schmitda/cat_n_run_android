@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         this.browser = (WebView) findViewById(R.id.webView);
         this.browser.setWebViewClient(new MyWebViewClient());
 
-        String url = "http://schmitz-dynamics.ch:60";
+        String url = "http://schmitz-dynamics.ch:65";
         this.browser.getSettings().setJavaScriptEnabled(true);
         this.browser.loadUrl(url);
     }
